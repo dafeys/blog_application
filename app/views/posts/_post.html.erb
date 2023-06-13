@@ -1,0 +1,11 @@
+<div id="<%= dom_id post %>">
+  <div class="card" style="width: 38rem;">
+    <h3 class="card-header"><%= post.title %></h2>
+    <div class="card-body">
+      <p class="card-text">
+        <%= post.body %>
+      </p>
+      <%= link_to "Show this post", post, class:"btn btn-primary btn-sm" %>
+    </div>
+  </div>
+</div>
