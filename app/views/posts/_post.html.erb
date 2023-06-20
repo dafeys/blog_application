@@ -1,11 +1,15 @@
 <div id="<%= dom_id post %>">
   <div class="card" style="width: 38rem;">
-    <h3 class="card-header"><%= post.title %></h2>
+    <h3 class="card-header"><%= post.title %></h3>
     <div class="card-body">
       <p class="card-text">
         <%= post.body %>
       </p>
-      <%= link_to "Show this post", post, class:"btn btn-primary btn-sm" %>
     </div>
+    <div class="card-footer text-body-secondary text-end">
+      posted by: <%= link_to post.user.name, user_path(post.user) %>
+      <%= pluralize(post.views, "view") %>
+      <%= link_to "Show this post", post, class:" btn btn-primary btn-sm" %>
+      </div>
   </div>
 </div>

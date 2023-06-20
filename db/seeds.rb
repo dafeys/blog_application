@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+require 'faker'
+
+User.create(email: 'samara@moesko.com', password: 'password', password_confirmation: 'password')
+
+10.times do |x|
+  Post.create(
+    title: Faker::TvShows::BigBangTheory.character,
+    body: Faker::TvShows::BigBangTheory.quote,
+    user_id: User.first.id,
+  )
+end
