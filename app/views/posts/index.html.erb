@@ -8,5 +8,8 @@
       <br>
     <% end %>
   </div>
+  <%= paginate @posts %>
+  <p><br></p>
   <%= link_to "New post", new_post_path, class:"btn btn-success" %>
+  <p><br></p>
 </div>

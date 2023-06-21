@@ -10,10 +10,12 @@ require 'faker'
 
 User.create(email: 'samara@moesko.com', password: 'password', password_confirmation: 'password')
 
-10.times do |x|
+30.times do |x|
   Post.create(
     title: Faker::TvShows::BigBangTheory.character,
     body: Faker::TvShows::BigBangTheory.quote,
-    user_id: User.first.id,
+    views: 0,
+    user_id: rand(1..3),
   )
+  sleep(0.5)
 end

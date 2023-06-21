@@ -3,7 +3,8 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    #@posts = Post.page(params[:page])
+    @posts = Post.order("id DESC").page(params[:page])
   end
 
   # GET /posts/1 or /posts/1.json
@@ -14,6 +15,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @user_options = User.all.map{ |u| [ u.name, u.id ] }
   end
 
   # GET /posts/1/edit
